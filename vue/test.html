@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>name:<input y-model='name' /></p>
+        <p>test:<input y-model='test' /></p>
+        <p><a>{{name}}</a></p>
+        <p>{{name}} {{test}}</p>
+    </div>
+    <script>
+        class VM {
+            constructor(options, elementId) {
+                this.data = options.data || {}; // 监听的数据对象
+                this.el = document.querySelector(elementId);
+                this.fragment = null; // 文档片段
+                this.matchModuleReg = new RegExp('\{\{\s*.*?\s*\}\}', 'gi'); // 匹配所有{{}}模版
+                this.nodeArr = []; // 所有带有模板的前端结点
+                this.modelObj = {}; // 绑定y-model的对象
+                this.init(); // 初始化
+            }
+
+            // 初始化
+            init() {
+                this.observer();
+                this.createDocumentFragment();
+                for (const key of Object.keys(this.data)) {
+                    this.matchElementModule(key);
+                }
+                this.el.appendChild(this.fragment);
+            }
+
+            // 监听数据变化方法
+            observer() {
+                const handler = {
+                    get: (target, propkey) => {
+                        return target[propkey];
+                    },
+                    set: (target, propkey, value) => {
+                        if(target[propkey] !== value) {
+                            target[propkey] = value;
+                            this.watcher(propkey);
+                        }
+                        return true;
+                    }
+                };
+                this.data = new Proxy(this.data, handler);
+            }
+
+            /**
+             *  创建一个文档片段
+             */
+             createDocumentFragment() {
+                let documentFragment = document.createDocumentFragment();
+                let child = this.el.firstChild;
+                // 循环向文档片段添加节点
+                while (child) {
+                    documentFragment.appendChild(child);
+                    
+                    child = this.el.firstChild;
+                }
+                this.fragment = documentFragment;
+            }
+
+            /**
+            *  匹配模板
+            *  @param { string } key 触发更新的key
+            *  @param { documentElement } fragment 结点
+            */
+            matchElementModule(key, fragment) {
+                const childNodes = fragment || this.fragment.childNodes;
+                [].slice.call(childNodes).forEach((node) => {
+
+                    // 监听所有带有y-model的结点
+                    if (node.getAttribute && this.checkAttribute(node)) {
+                        const tmpAttribute = this.checkAttribute(node);
+                        if(!this.modelObj[tmpAttribute]) {
+                            this.modelObj[tmpAttribute] = [];
+                        };
+                        this.modelObj[tmpAttribute].push(node);
+                        this.setModelData(tmpAttribute, node);
+                        this.bindModelData(tmpAttribute, node);
+                    }
+
+                    // 保存所有带有{{}}模版的结点
+                    if (node.nodeType === 3 && this.matchModuleReg.test(node.textContent)) {
+                        node.defaultContent = node.textContent; // 将初始化的前端内容保存到节点的defaultContent中
+                        this.changeData(node);
+                        this.nodeArr.push(node); // 保存带有模板的结点
+                    }
+
+                    // 递归遍历子节点
+                    if(node.childNodes && node.childNodes.length) {
+                        this.matchElementModule(key, node.childNodes);
+                    }
+                })
+            }
+            
+            /**
+             * 改变视图数据
+             * @param { documentElement } node
+             */
+            changeData(node) {
+                const matchArr = node.defaultContent.match(this.matchModuleReg); // 获取所有需要匹配的模板
+                let tmpStr = node.defaultContent;
+                for(const key of matchArr) {
+                    tmpStr = tmpStr.replace(key, this.data[key.replace(/\{\{|\}\}|\s*/g, '')] || '');
+                }
+                node.textContent = tmpStr;
+            }
+
+            watcher(key) {
+                if (this.modelObj[key]) {
+                    this.modelObj[key].forEach(node => {
+                        this.setModelData(key, node);
+                    })
+                }
+                for(const node of this.nodeArr) {
+                    this.changeData(node);
+                }
+            }
+
+            // 绑定 y-model
+            bindModelData(key, node) {
+                if (this.data[key]) {
+                    node.addEventListener('input', (e) => {
+                        this.data[key] = e.target.value;
+                    }, false);
+                }
+            }
+            
+            // 设置 y-model 值
+            setModelData(key, node) {
+                node.value = this.data[key];
+            }
+
+            // 检查y-model属性
+            checkAttribute(node) {
+                return node.getAttribute('y-model');
+            }
+        }
+
+        const vm = new VM({
+            data: {
+                name: 'defaultName',
+                test: 'defaultTest',
+            },
+        }, '#app');
+        setTimeout(() => {
+            console.log('change data !!');
+            vm.data.name = '小明';
+        }, 2000)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>myVue</title>
+    </head>
+    <body>
+        <div id="app">
+            <input y-model='test' />
+            <p>{{test}} {{name}}</p>
+            <p>{{test}}</p>
+        </div>
+        <script src='./js/index.js'></script>
+        <script>
+            var myVue = new MyVue({
+                test: 'hello world',
+                name: 'my name is vue',
+            }, 'app');
+
+            setTimeout(()=>{
+                myVue.data.test = 'change data';
+                myVue.data.name = 'change!!!';
+            },1000)
+        </script>
+    </body>
+</html>
