@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>getMessage</title>
+    </head>
+    <body>
+        <p id="showMsg"></p>
+        <script>
+        const channel = new BroadcastChannel('test_channel')
+        const showMsg = document.querySelector('#showMsg');
+        channel.onmessage = function(event) {
+            showMsg.innerText = event.data;
+            channel.postMessage(`接收到消息：${event.data}`);
+        }
+    </script>
+</body>
+</html>

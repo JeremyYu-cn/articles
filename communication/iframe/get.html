@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>windowGetMessage</title>
+    </head>
+    <body>
+        <p id="showMsg"></p>
+        <script>
+        const showMsg = document.querySelector('#showMsg');
+
+        window.addEventListener('message', (event) => {
+            showMsg.innerText = event.data;
+            event.source.postMessage(`信息已收到:${event.data}`, '*');  
+        })
+    </script>
+</body>
+</html>

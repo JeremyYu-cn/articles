@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>socketPageB</title>
+    </head>
+    <body>
+        <p><input id="input" value="" /></p>
+        <p><button id="btn">发送信息</button></p>
+        <p id="showMsg"></p>
+        <script>
+            const input = document.querySelector('#input');
+            const btn = document.querySelector('#btn');
+            const showMsg = document.querySelector('#showMsg');
+            const socket = new WebSocket('ws://localhost:12345', 'pageB');
+
+            btn.onclick = function() {
+                socket.send(JSON.stringify({
+                    to: 'pageA', // 给pageA发送消息
+                    from: 'pageB', // 消息来自pageB
+                    data: input.value, // 发送的数据
+                }));
+            }
+            socket.onmessage = (event) => {
+                showMsg.innerText += `${new Date().getTime()}: ${event.data}\n`;
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>shareWorker_send</title>
+    </head>
+    <body>
+        <div>
+            <p>
+                <input id="input" value="" />
+            </p>
+            <p>
+                <button id="btn">发送信息</button>
+            </p>
+            <p id="getMsg"></p>
+        </div>
+        <script>
+            const worker = new SharedWorker('./worker.js');
+            const input = document.querySelector('#input');
+            const btn = document.querySelector('#btn');
+            const getMsg = document.querySelector('#getMsg');
+
+            worker.port.start(); // 开启worker
+
+            btn.onclick = function() {
+                worker.port.postMessage(input.value);
+            }
+
+            worker.port.onmessage = function(event) {
+                getMsg.innerText = event.data;
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>changeStorage</title>
+    </head>
+    <body>
+        <div>
+            <p>
+                <input id="input" value="" />
+            </p>
+            <p>
+                <button id="btn">发送信息</button>
+            </p>
+            <p id="getMsg"></p>
+        </div>
+        <script>
+            const input = document.querySelector('#input');
+            const btn = document.querySelector('#btn');
+            const getMsg = document.querySelector('#getMsg');
+
+            localStorage.setItem('test', 'defaultValue'); // 设置一个默认值
+
+            btn.onclick = function() {
+                localStorage.setItem('test', input.value);
+            }
+            
+        </script>
+    </body>
+</html>

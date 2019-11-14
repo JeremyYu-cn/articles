@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>sendMessage</title>
+    </head>
+    <body>
+        <div>
+            <p>
+                <input id="input" value="" />
+            </p>
+            <p>
+                <button id="btn">发送信息</button>
+            </p>
+            <p id="getMsg"></p>
+        </div>
+        <script>
+            const channel = new BroadcastChannel('test_channel');
+            const input = document.querySelector('#input');
+            const btn = document.querySelector('#btn');
+            const getMsg = document.querySelector('#getMsg');
+
+            // 发送消息
+            btn.addEventListener('click', (e) => {
+                channel.postMessage(input.value);
+            }, false);
+
+            // 接口反馈信息
+            channel.onmessage = function(event) {
+                getMsg.innerText = event.data;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>getStorage</title>
+    </head>
+    <body>
+        <p id="showMsg"></p>
+        <script>
+        const showMsg = document.querySelector('#showMsg');
+
+        window.addEventListener('storage', (event) => {
+            showMsg.innerText = `key:${event.key} \n 旧值：${event.oldValue} \n 新值： ${event.newValue}`;
+        }, false);
+    </script>
+</body>
+</html>

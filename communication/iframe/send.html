@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>windowPostMessage</title>
+    </head>
+    <body>
+        <div>
+            <p>
+                <input id="input" value="" />
+            </p>
+            <p>
+                <button id="btn">发送信息</button>
+            </p>
+            <p id="getMsg"></p>
+        </div>
+        <iframe src='http://localhost:8888/iframe/get.html' id="iframe"></iframe>
+        <script>
+            const input = document.querySelector('#input');
+            const btn = document.querySelector('#btn');
+            const getMsg = document.querySelector('#getMsg');
+            const ifm = document.querySelector('#iframe');
+
+            btn.addEventListener('click', (e) => {
+                ifm.contentWindow.postMessage(input.value, '*');
+            }, false);
+
+            window.addEventListener('message', (e) => {
+                getMsg.innerText = e.data;
+            }, false);
+            
+        </script>
+    </body>
+</html>

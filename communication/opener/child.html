@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title>child</title>
+    </head>
+    <body>
+        <p id="showMsg"></p>
+        <script>
+            if (window.opener) {
+                const showMsg = document.querySelector('#showMsg');
+                showMsg.innerHTML = '我是通过父页面parent.html打开的';
+                window.opener.document.querySelector('#childModify').innerText = '我是通过子页面修改的!';
+            }
+        </script>
+</body>
+</html>
