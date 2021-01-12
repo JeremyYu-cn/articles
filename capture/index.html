@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>事件冒泡和捕获</title>
+    </head>
+    <body>
+        <div>
+            <ul id="ul">
+            </ul>
+        </div>
+        <script>
+            (function(window){
+                var framgent = document.createDocumentFragment();
+                var ul = document.querySelector('#ul');
+                var num = 50;
+                for(let x = 0; x < num; x++) {
+                    var li = document.createElement('li');
+                    li.innerText = x;
+                    li.addEventListener('click', (e) => {
+                        console.log('li event');
+                    }, true);
+                    framgent.appendChild(li);
+                }
+                ul.addEventListener('click', (e) => {
+                    console.log('ul event');
+                }, true)
+                ul.appendChild(framgent);
+            })(window)
+        </script>
+    </body>
+</html>
