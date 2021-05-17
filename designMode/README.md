@@ -1,7 +1,7 @@
 ---
 title: 万字长文，带你了解Javascript设计模式（持续更新）。
 date: 2021-05-15 20:00:00
-updated: 2021-05-15 20:00:00
+updated: 2021-05-17 20:00:00
 photos: 
   - https://img.yzmblog.top/blog/communication.jpg
 tags:
