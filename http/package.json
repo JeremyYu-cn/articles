@@ -1,0 +1,21 @@
+{
+  "name": "http-server",
+  "version": "0.0.1",
+  "description": "a node http server",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "dev": "tsc & node ./build/index.js"
+  },
+  "keywords": [
+    "http",
+    "tcp",
+    "node",
+    "javascript"
+  ],
+  "author": "jeremy Yu",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^15.6.1"
+  }
+}
