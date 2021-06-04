@@ -18,3 +18,5 @@
 ## 设计模式
 
 * [原型模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/prototype)
+
+* [单例模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/single)
