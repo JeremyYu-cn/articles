@@ -23,3 +23,5 @@
 * [单例模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/single)
 
 * [策略模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/policy)
+
+* [发布-订阅模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/publish_subscribe)
