@@ -27,15 +27,7 @@ webworker实例提供两个监听器：`onmessage`和`onerror`。同时他还提
 `postMessage`用于传输数据到工作线程。
 通过这些监听器和方法，可以了解到worker的工作流程如下图。
 
-```mermaid
-sequenceDiagram
-主线程->>主线程: 创建worker和添加onmessage监听器
-工作线程JS->>工作线程JS: 添加message监听器
-主线程-->>工作线程JS: postMessage
-工作线程JS->>工作线程JS: 判断对应的message方法并执行逻辑
-工作线程JS-->>主线程: postMessage
-主线程->>主线程: 接收并处理信息
-```
+![](https://img.yzmblog.top/blog/web_worker_time.jpg)
 
 根据时序图可以编写出程序：
 

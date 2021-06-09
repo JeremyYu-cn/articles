@@ -7,6 +7,7 @@
 * [js中的事件循环](https://github.com/IchliebedichZhu/articles/tree/master/eventloop)
 * [沙箱是什么，如何实现一个JS沙箱](https://github.com/IchliebedichZhu/articles/tree/master/sandbox)
 * [浅谈JavaScript代码压缩](https://github.com/IchliebedichZhu/articles/tree/master/compressCode)
+* [初探webWorkers](https://github.com/IchliebedichZhu/articles/tree/master/webWorders)
 # vue
 
 * [用proxy实现双向绑定](https://github.com/IchliebedichZhu/articles/tree/master/vue)
