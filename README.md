@@ -8,6 +8,7 @@
 * [沙箱是什么，如何实现一个JS沙箱](https://github.com/IchliebedichZhu/articles/tree/master/sandbox)
 * [浅谈JavaScript代码压缩](https://github.com/IchliebedichZhu/articles/tree/master/compressCode)
 * [初探webWorkers](https://github.com/IchliebedichZhu/articles/tree/master/webWorkers)
+* [关于前端性能优化的一些建议](https://github.com/IchliebedichZhu/articles/tree/master/preformance)
 # vue
 
 * [用proxy实现双向绑定](https://github.com/IchliebedichZhu/articles/tree/master/vue)
