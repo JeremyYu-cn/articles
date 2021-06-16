@@ -9,6 +9,7 @@
 * [浅谈JavaScript代码压缩](https://github.com/IchliebedichZhu/articles/tree/master/compressCode)
 * [初探webWorkers](https://github.com/IchliebedichZhu/articles/tree/master/webWorkers)
 * [关于前端性能优化的一些建议](https://github.com/IchliebedichZhu/articles/tree/master/preformance)
+* [原来JavaScript是这样实现模块区分的！](https://github.com/IchliebedichZhu/articles/tree/master/javascript/module)
 # vue
 
 * [用proxy实现双向绑定](https://github.com/IchliebedichZhu/articles/tree/master/vue)
