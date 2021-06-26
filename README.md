@@ -2,15 +2,14 @@
 
 - [如何实现一个 Promise](https://github.com/IchliebedichZhu/articles/tree/master/javascript/promise)
 - [浅谈 ES6 的 proxy](https://github.com/IchliebedichZhu/articles/tree/master/javascript/proxy)
-- [如何在前端实现一个沙箱](https://github.com/IchliebedichZhu/articles/tree/master/javascript/sandbox)
-- [浏览器中的跨业面通信](https://github.com/IchliebedichZhu/articles/tree/master/javascript/communication)
+- [用 proxy 实现双向绑定](https://github.com/IchliebedichZhu/articles/tree/master/javascript/vueProxy)
 - [js 中的事件循环](https://github.com/IchliebedichZhu/articles/tree/master/javascript/eventloop)
+- [浏览器中的跨页面通信](https://github.com/IchliebedichZhu/articles/tree/master/javascript/communication)
 - [沙箱是什么，如何实现一个 JS 沙箱](https://github.com/IchliebedichZhu/articles/tree/master/javascript/sandbox)
 - [浅谈 JavaScript 代码压缩](https://github.com/IchliebedichZhu/articles/tree/master/javascript/compressCode)
 - [初探 webWorkers](https://github.com/IchliebedichZhu/articles/tree/master/javascript/webWorkers)
-- [关于前端性能优化的一些建议](https://github.com/IchliebedichZhu/articles/tree/master/javascript/preformance)
-- [原来 JavaScript 是这样实现模块区分的！](https://github.com/IchliebedichZhu/articles/tree/master/javascript/javascript/module)
-- [用 proxy 实现双向绑定](https://github.com/IchliebedichZhu/articles/tree/master/javascript/vue)
+- [关于前端性能优化的一些建议](https://github.com/IchliebedichZhu/articles/tree/master/javascript/performance)
+- [原来 JavaScript 是这样实现模块区分的！](https://github.com/IchliebedichZhu/articles/tree/master/javascript/module)
 
 ## node
 
