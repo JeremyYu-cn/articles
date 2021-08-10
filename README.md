@@ -10,6 +10,7 @@
 - [初探 webWorkers](https://github.com/IchliebedichZhu/articles/tree/master/javascript/webWorkers)
 - [关于前端性能优化的一些建议](https://github.com/IchliebedichZhu/articles/tree/master/javascript/performance)
 - [原来 JavaScript 是这样实现模块区分的！](https://github.com/IchliebedichZhu/articles/tree/master/javascript/module)
+- [新一代打包工具 esbuild](https://github.com/IchliebedichZhu/articles/tree/master/javascript/esbuild)
 
 ## node
 
