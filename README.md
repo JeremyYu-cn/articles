@@ -18,6 +18,8 @@
 - [用 TCP 编写一个 HTTP 服务](https://github.com/IchliebedichZhu/articles/tree/master/node/http)
 - [如何制作一个属于自己的 cli 工具](https://github.com/IchliebedichZhu/articles/tree/master/node/cli)
 
+- [了解 NodeJs 中的多线程](https://github.com/IchliebedichZhu/articles/tree/master/node/threads)
+
 ## 设计模式
 
 - [原型模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/prototype)
