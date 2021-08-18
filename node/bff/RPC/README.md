@@ -3,8 +3,6 @@ theme: smartblue
 highlight: a11y-dark
 ---
 
-这是我参与 8 月更文挑战的第`7`天，活动详情查看：[8 月更文挑战](https://juejin.cn/post/6987962113788493831)
-
 ## 前言
 
 [上一篇文章](https://juejin.cn/post/6996935339386339336#heading-11)介绍了 BFF 的概念和应用场景，并且做了一个简单的 BFFdemo。接下来可以讨论一下如何优化 BFF 层
