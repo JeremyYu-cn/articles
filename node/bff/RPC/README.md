@@ -5,7 +5,7 @@ highlight: a11y-dark
 
 ## 前言
 
-[上一篇文章](https://juejin.cn/post/6996935339386339336#heading-11)介绍了 BFF 的概念和应用场景，并且做了一个简单的 BFFdemo。接下来可以讨论一下如何优化 BFF 层
+[上一篇文章](https://github.com/IchliebedichZhu/articles/tree/master/node/bff/server)介绍了 BFF 的概念和应用场景，并且做了一个简单的 BFFdemo。接下来可以讨论一下如何优化 BFF 层
 
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/563f83afd454423ab86899e0d0e2dd63~tplv-k3u1fbpfcp-watermark.image)
 
