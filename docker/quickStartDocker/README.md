@@ -140,7 +140,7 @@ docker 的核心概念是`镜像`，`容器`，`仓库`。**卷**和**网络**�
 
 这样，两个网络就连接起来了。
 
-### 卷(volumn)
+### 卷(volume)
 
 docker 默认容器除了网络独立，文件也是独立的，如果想要浏览容器外部文件，或者两个容器共享文件，那么就需要用到**卷（volume）**。
 卷的常用操作有：
@@ -178,14 +178,14 @@ docker 默认容器除了网络独立，文件也是独立的，如果想要浏�
 首先用 node 写一个 web 服务
 
 ```javascript
-const http = require("http");
+const http = require('http');
 
 const app = http.createServer((req, res) => {
-  res.end("Hello Docker");
+  res.end('Hello Docker');
 });
 
 app.listen(8080, () => {
-  console.log("server running at 8080");
+  console.log('server running at 8080');
 });
 ```
 
@@ -199,7 +199,7 @@ app.listen(8080, () => {
     docker network create my-network
 
     # 创建卷
-    docker volumn create my-volume
+    docker volume create my-volume
 
     # 创建nginx容器
     docker run nginx -v my-colume:/share --network my-network -it -d -p 80:80 --name nginx nginx /bin/bash

@@ -20,6 +20,8 @@
 
 - [了解 NodeJs 中的多线程](https://github.com/IchliebedichZhu/articles/tree/master/node/threads)
 
+- [使用 Node.js 构建 BFF 层（二）](https://github.com/IchliebedichZhu/articles/tree/master/node/bff/RPC)
+
 ## 设计模式
 
 - [原型模式](https://github.com/IchliebedichZhu/articles/tree/master/designMode/prototype)
